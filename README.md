@@ -1,6 +1,8 @@
 # react_native_jobs
 React Native + Expo application
 
+-Rapid API 'JSearch' for jobs runtime search
+
 # Expo Router Example
 
 Use [`expo-router`](https://docs.expo.dev/router/introduction/) to build native navigation using files in the `app/` directory.
