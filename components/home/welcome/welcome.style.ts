@@ -1,8 +1,22 @@
-import { StyleSheet } from "react-native";
-
+import { StyleSheet, ViewStyle, TextStyle, ImageStyle } from "react-native";
 import { COLORS, FONT, SIZES } from "../../../constants";
 
-const styles = StyleSheet.create({
+
+interface Styles {
+  container: ViewStyle;
+  userName: TextStyle;
+  welcomeMessage: TextStyle;
+  searchContainer: ViewStyle;
+  searchWrapper: ViewStyle;
+  searchInput: TextStyle;
+  searchBtn: ViewStyle;
+  searchBtnImage: ImageStyle;
+  tabsContainer: ViewStyle;
+  tab: (activeJobType: string, item: string) => ViewStyle;
+  tabText: (activeJobType: string, item: string) => TextStyle;
+}
+
+const styles: Styles = {
   container: {
     width: "100%",
   },
@@ -50,7 +64,7 @@ const styles = StyleSheet.create({
   searchBtnImage: {
     width: "50%",
     height: "50%",
-    tintColor: COLORS.white,
+    tintColor: COLORS.white as string,
   },
   tabsContainer: {
     width: "100%",
@@ -67,6 +81,6 @@ const styles = StyleSheet.create({
     fontFamily: FONT.medium,
     color: activeJobType === item ? COLORS.secondary : COLORS.gray2,
   }),
-});
+};
 
 export default styles;

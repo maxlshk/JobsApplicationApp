@@ -3,12 +3,12 @@ import { useState } from 'react'
 import { View, Text, TextInput, TouchableOpacity, Image, FlatList } from 'react-native'
 import { useRouter } from 'expo-router'
 import styles from './welcome.style'
-import { icons, SIZES, COLORS, FONTS } from '../../../constants'
+import { icons, SIZES, COLORS } from '../../../constants'
 
 const jobTypes = ["Full-time", "Part-time", "Contractor"];
 
 
-const Welcome = ({searchTerm, setSearchTerm, handleClick}) => {
+const Welcome = ({searchTerm, setSearchTerm, handleClick}: {searchTerm: string, setSearchTerm: (text: string) => void, handleClick: () => void}) => {
   const router = useRouter();
   const [activeJobType, setActiveJobType] = useState("Full-time");
   return (
@@ -32,7 +32,7 @@ const Welcome = ({searchTerm, setSearchTerm, handleClick}) => {
           <Image
             source={icons.search}
             resizeMode='contain'
-            style={styles.searchBtnImage}
+            style={styles.searchBtnImage as any}
           />
         </TouchableOpacity>
       </View>
