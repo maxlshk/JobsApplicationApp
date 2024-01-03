@@ -4,13 +4,19 @@ import { View, Text, TouchableOpacity, Image } from 'react-native'
 import styles from './popularjobcard.style'
 import { checkImageURL } from '../../../../utils'
 
-const PopularJobCard = ({ item, selectedJob, onPress }) => {
+const PopularJobCard = ({
+  item,
+  selectedJob,
+  onPress
+}: any) => {
   return (
     <TouchableOpacity
+      // @ts-expect-error TS(2349): This expression is not callable.
       style={styles.container(selectedJob, item)}
       onPress={() => onPress(item)}
     >
       <TouchableOpacity
+        // @ts-expect-error TS(2349): This expression is not callable.
         style={styles.logoContainer(selectedJob, item)}
       >
         <Image
@@ -20,6 +26,7 @@ const PopularJobCard = ({ item, selectedJob, onPress }) => {
               : 'https://t4.ftcdn.net/jpg/05/05/61/73/360_F_505617309_NN1CW7diNmGXJfMicpY9eXHKV4sqzO5H.jpg'
           }}
           resizeMode="contain"
+          // @ts-expect-error TS(2769): No overload matches this call.
           style={styles.logoImage}
         />
       </TouchableOpacity>
@@ -33,6 +40,7 @@ const PopularJobCard = ({ item, selectedJob, onPress }) => {
       <View style={styles.infoContainer}>
         <Text
           numberOfLines={1}
+          // @ts-expect-error TS(2349): This expression is not callable.
           style={styles.jobName(selectedJob, item)}
         >
           {item.job_title}

@@ -23,6 +23,7 @@ const Layout = () => {
     }
 
     return (
+        // @ts-expect-error TS(2322): Type '{ onLayout: () => Promise<void>; }' is not a... Remove this comment to see the full error message
         <Stack onLayout={onLayoutRootView} />
     )
 }

@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 import { COLORS, FONT, SHADOWS, SIZES } from "../../../../constants";
 
 const styles = StyleSheet.create({
+  // @ts-expect-error TS(2322): Type '(selectedJob: any, item: any) => { shadowCol... Remove this comment to see the full error message
   container: (selectedJob, item) => ({
     width: 250,
     padding: SIZES.xLarge,
@@ -10,15 +11,16 @@ const styles = StyleSheet.create({
     borderRadius: SIZES.medium,
     justifyContent: "space-between",
     ...SHADOWS.medium,
-    shadowColor: COLORS.white,
+    shadowColor: COLORS.white
   }),
+  // @ts-expect-error TS(2322): Type '(selectedJob: any, item: any) => { width: nu... Remove this comment to see the full error message
   logoContainer: (selectedJob, item) => ({
     width: 50,
     height: 50,
     backgroundColor: selectedJob === item.job_id ? "#FFF" : COLORS.white,
     borderRadius: SIZES.medium,
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center"
   }),
   logoImage: {
     width: "70%",
@@ -33,10 +35,11 @@ const styles = StyleSheet.create({
   infoContainer: {
     marginTop: SIZES.large,
   },
+  // @ts-expect-error TS(2322): Type '(selectedJob: any, item: any) => { fontSize:... Remove this comment to see the full error message
   jobName: (selectedJob, item) => ({
     fontSize: SIZES.large,
     fontFamily: FONT.medium,
-    color: selectedJob === item.job_id ? COLORS.white : COLORS.primary,
+    color: selectedJob === item.job_id ? COLORS.white : COLORS.primary
   }),
   infoWrapper: {
     flexDirection: "row",
@@ -44,10 +47,12 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
   },
-  publisher: (selectedJob) => ({
+  // @ts-expect-error TS(2322): Type '(selectedJob: any) => { fontSize: number; fo... Remove this comment to see the full error message
+  publisher: (selectedJob: any) => ({
     fontSize: SIZES.medium - 2,
     fontFamily: FONT.bold,
-    color: selectedJob === item.job_id ? COLORS.white : COLORS.primary,
+    // @ts-expect-error TS(2304): Cannot find name 'item'.
+    color: selectedJob === item.job_id ? COLORS.white : COLORS.primary
   }),
   location: {
     fontSize: SIZES.medium - 2,

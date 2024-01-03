@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     marginTop: SIZES.small,
     marginBottom: SIZES.small / 2,
   },
+  // @ts-expect-error TS(2322): Type '(name: any, activeTab: any) => { shadowColor... Remove this comment to see the full error message
   btn: (name, activeTab) => ({
     paddingVertical: SIZES.medium,
     paddingHorizontal: SIZES.xLarge,
@@ -14,12 +15,13 @@ const styles = StyleSheet.create({
     borderRadius: SIZES.medium,
     marginLeft: 2,
     ...SHADOWS.medium,
-    shadowColor: COLORS.white,
+    shadowColor: COLORS.white
   }),
+  // @ts-expect-error TS(2322): Type '(name: any, activeTab: any) => { fontFamily:... Remove this comment to see the full error message
   btnText: (name, activeTab) => ({
     fontFamily: "DMMedium",
     fontSize: SIZES.small,
-    color: name === activeTab ? "#C3BFCC" : "#AAA9B8",
+    color: name === activeTab ? "#C3BFCC" : "#AAA9B8"
   }),
 });
 

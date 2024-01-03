@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const useFetch = (endpoint, query) => {
+const useFetch = (endpoint: any, query: any) => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -24,7 +24,9 @@ const useFetch = (endpoint, query) => {
             setData(response.data.data);
             setIsLoading(false);
         } catch (error) {
+            // @ts-expect-error TS(2345): Argument of type 'unknown' is not assignable to pa... Remove this comment to see the full error message
             setError(error);
+            // @ts-expect-error TS(2304): Cannot find name 'alert'.
             alert('There was an error fetching the data. Please try again later.')
         } finally {
             setIsLoading(false);

@@ -11,10 +11,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  btnImg: (dimension) => ({
+  // @ts-expect-error TS(2322): Type '(dimension: any) => { width: any; height: an... Remove this comment to see the full error message
+  btnImg: (dimension: any) => ({
     width: dimension,
     height: dimension,
-    borderRadius: SIZES.small / 1.25,
+    borderRadius: SIZES.small / 1.25
   }),
 });
 

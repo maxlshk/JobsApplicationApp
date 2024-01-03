@@ -4,7 +4,9 @@ import { View, Text, TouchableOpacity, Image, Linking } from 'react-native'
 import styles from './footer.style'
 import { icons } from '../../../constants'
 
-const Footer = ({ url }) => {
+const Footer = ({
+  url
+}: any) => {
   return (
     <View style= { styles.container }>
       <TouchableOpacity style={ styles.likeBtn}>
