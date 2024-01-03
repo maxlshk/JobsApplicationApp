@@ -38,6 +38,7 @@ const JobSearch = () => {
             const response = await axios.request(options);
             setSearchResult(response.data.data);
         } catch (error) {
+            // @ts-expect-error TS(2345): Argument of type 'unknown' is not assignable to pa... Remove this comment to see the full error message
             setSearchError(error);
             console.log(error);
         } finally {
@@ -45,7 +46,7 @@ const JobSearch = () => {
         }
     };
 
-    const handlePagination = (direction) => {
+    const handlePagination = (direction: any) => {
         if (direction === 'left' && page > 1) {
             setPage(page - 1)
             handleSearch()
@@ -81,9 +82,11 @@ const JobSearch = () => {
                 renderItem={({ item }) => (
                     <NearbyJobCard
                         job={item}
+                        // @ts-expect-error TS(2339): Property 'job_id' does not exist on type 'never'.
                         handleNavigate={() => router.push(`/job-details/${item.job_id}`)}
                     />
                 )}
+                // @ts-expect-error TS(2339): Property 'job_id' does not exist on type 'never'.
                 keyExtractor={(item) => item.job_id}
                 contentContainerStyle={{ padding: SIZES.medium, rowGap: SIZES.medium }}
                 ListHeaderComponent={() => (
