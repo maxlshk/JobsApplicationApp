@@ -31,23 +31,20 @@ const JobDetails = () => {
                 return (
                     <Specifics 
                         title='Qualifications'
-                        // @ts-expect-error TS(2339): Property 'job_highlights' does not exist on type '... Remove this comment to see the full error message
-                        points={data[0].job_highlights?.Qualifications ?? ['N/A']}
+                        points={(data[0] as any)?.job_highlights?.Qualifications ?? ['N/A']}
                     />
                 )
             case "About":
                 return (
                     <JobAbout 
-                        // @ts-expect-error TS(2339): Property 'job_description' does not exist on type ... Remove this comment to see the full error message
-                        info={data[0].job_description ?? 'N/A'}
+                        info={(data[0] as any)?.job_description ?? 'N/A'}
                     />
                 )
             case "Responsibilities":
                 return (
                     <Specifics 
                         title='Responsibilities'
-                        // @ts-expect-error TS(2339): Property 'job_highlights' does not exist on type '... Remove this comment to see the full error message
-                        points={data[0].job_highlights?.Responsibilities ?? ['N/A']}
+                        points={(data[0] as any)?.job_highlights?.Responsibilities ?? ['N/A']}
                     />
                 )
             default:
@@ -105,14 +102,10 @@ const JobDetails = () => {
                     ) : (
                         <View style={{ padding: SIZES.medium, paddingBottom: 100 }}>
                             <Company
-                                // @ts-expect-error TS(2339): Property 'employer_logo' does not exist on type 'n... Remove this comment to see the full error message
-                                companyLogo={data[0].employer_logo}
-                                // @ts-expect-error TS(2339): Property 'job_title' does not exist on type 'never... Remove this comment to see the full error message
-                                jobTitle={data[0].job_title}
-                                // @ts-expect-error TS(2339): Property 'employer_name' does not exist on type 'n... Remove this comment to see the full error message
-                                companyName={data[0].employer_name}
-                                // @ts-expect-error TS(2339): Property 'job_country' does not exist on type 'nev... Remove this comment to see the full error message
-                                location={data[0].job_country}
+                                companyLogo={(data[0] as any)?.employer_logo}
+                                jobTitle={(data[0] as any)?.job_title}
+                                companyName={(data[0] as any)?.employer_name}
+                                location={(data[0] as any)?.job_country}
                             />
                             <JobTabs
                                 tabs={tabs}
@@ -126,8 +119,7 @@ const JobDetails = () => {
                 </ScrollView>
 
                 <JobFooter 
-                    // @ts-expect-error TS(2339): Property 'job_google_link' does not exist on type ... Remove this comment to see the full error message
-                    url={data[0]?.job_google_link?? 'https://careers.google.com/jobs/results/'}
+                    url={(data[0] as any)?.job_google_link?? 'https://careers.google.com/jobs/results/'}
                 />
             </>
         </SafeAreaView>
