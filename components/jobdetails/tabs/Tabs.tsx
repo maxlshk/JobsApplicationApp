@@ -12,10 +12,11 @@ const TabButton = ({
   <TouchableOpacity
     // @ts-expect-error TS(2349): This expression is not callable.
     style={styles.btn(name, activeTab)}
-    onPress={onHandleSearchType}
-  >
+    onPress={onHandleSearchType}>
+    
+    <Text
     // @ts-expect-error TS(2349): This expression is not callable.
-    <Text style={styles.btnText(name, activeTab)}>{name}</Text>
+     style={styles.btnText(name, activeTab)}>{name}</Text>
   </TouchableOpacity>
 )
 
