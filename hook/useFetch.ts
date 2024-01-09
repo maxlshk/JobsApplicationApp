@@ -26,7 +26,6 @@ const useFetch = (endpoint: any, query: any) => {
         } catch (error) {
             // @ts-expect-error TS(2345): Argument of type 'unknown' is not assignable to pa... Remove this comment to see the full error message
             setError(error);
-            // @ts-expect-error TS(2304): Cannot find name 'alert'.
             alert('There was an error fetching the data. Please try again later.')
         } finally {
             setIsLoading(false);

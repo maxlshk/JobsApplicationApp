@@ -22,3 +22,4 @@ Use **Expo Go** from Google Play or App store to run on your mobile device in de
 - [Expo Router: Docs](https://docs.expo.dev/router/introduction/)
 - [React Native: Docs](https://reactnative.dev/docs/environment-setup)
 - [Rapid API: JSearch](https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch)
+** If RapidAPI quota request limit is reached, the data won't be fetched untill nex month **
